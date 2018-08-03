@@ -30,7 +30,7 @@ namespace SkyBus.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<SkyBus.Models.Bus> Buses { get; set; }
+        public System.Data.Entity.DbSet<Domain.Entities.Bus> Buses { get; set; }
 
         public System.Data.Entity.DbSet<SkyBus.Models.Ticket> Tickets { get; set; }
 

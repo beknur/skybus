@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using Domain.Entities;
+using Domain.Interfaces;
 using SkyBus.Models;
 
 namespace SkyBus.Controllers
@@ -14,12 +11,21 @@ namespace SkyBus.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        private readonly IBusRepository _busRepository;
+
+        public BusesController(IBusRepository busRepository)
+        {
+            _busRepository = busRepository;
+        }
+        public BusesController() { }
+
+
         // GET: Buses
         public ActionResult Index()
         {
-            return View(db.Buses.ToList());
+            return View(_busRepository.GetBuses());
         }
-
+        
         // GET: Buses/Details/5
         public ActionResult Details(int? id)
         {
