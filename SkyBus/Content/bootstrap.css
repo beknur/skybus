@@ -4506,7 +4506,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+    background: url(../Images/SkyBus.png) no-repeat top left;
+    display: block;
+    width: 150px;
+    text-indent: -9999px; /* hides the link text */
+    color: #999999;
 }
 
 .navbar-inverse .navbar-brand:hover,
